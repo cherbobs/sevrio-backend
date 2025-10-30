@@ -4,7 +4,7 @@ dotenv.config();
 
 export const sequelize = new Sequelize({
   dialect: "postgres",
-  host: process.env.DB_HOST,
+  host: process.env.DB_HOST?.replace("db.", "db."), // (on garde l'host)
   port: Number(process.env.DB_PORT),
   username: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
@@ -12,5 +12,6 @@ export const sequelize = new Sequelize({
   logging: false,
   dialectOptions: {
     ssl: { require: true, rejectUnauthorized: false },
+    family: 4, // <-- forcer IPv4
   },
 });
