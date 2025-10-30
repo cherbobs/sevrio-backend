@@ -1,5 +1,5 @@
 import Fastify from "fastify";
-import { sequelize } from "./db/sequelize";
+import { sequelize } from "./db/sequelize.js";
 
 const app = Fastify();
 

@@ -1,5 +1,5 @@
 import fp from "fastify-plugin";
-import { supabaseAdmin } from "../lib/supabase";
+import { supabaseAdmin } from "../lib/supabase.js";
 
 declare module "fastify" {
   interface FastifyRequest {
