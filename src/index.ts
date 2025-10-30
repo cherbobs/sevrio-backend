@@ -1,5 +1,5 @@
 import Fastify from "fastify";
-import { sequelize } from "./db/sequelize"; // <-- importer Sequelize
+import { sequelize } from "./db/sequelize";
 
 const app = Fastify();
 
@@ -13,8 +13,10 @@ const start = async () => {
     await sequelize.authenticate();
     console.log("✅ Connected to Supabase Postgres");
 
-    await app.listen({ port: 3000 });
-    console.log("🚀 Server running at http://localhost:3000");
+    const port = Number(process.env.PORT) || 3000;
+
+    await app.listen({ port, host: "0.0.0.0" });
+    console.log(`🚀 Server running on port ${port}`);
   } catch (err) {
     console.error("❌ Error starting server:", err);
     process.exit(1);

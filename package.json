@@ -5,8 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsx watch src/index.ts",
-    "start": "node --enable-source-maps dist/index.js",
     "build": "tsc -p tsconfig.json",
+    "start": "node --enable-source-maps dist/server.js",
     "lint": "eslint ."
   },
   "keywords": [],
@@ -24,9 +24,11 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
-    "@types/node": "^24.9.1",
+    "@types/node": "^24.9.2",
     "eslint": "^9.38.0",
     "prettier": "^3.6.2",
+    "sequelize-auto": "^0.8.8",
+    "sequelize-typescript": "^2.1.6",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   }
